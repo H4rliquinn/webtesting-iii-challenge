@@ -14,15 +14,10 @@ test("Default Gate State", () => {
   getByText(/close gate/i);
 });
 
-// test("Can't open/close if locked", () => {
-//   const toggleLocked = jest.fn();
-//   const toggleClosed = jest.fn();
-//   const { getByText, queryByText } = render(<Dashboard />);
-
-//   const closeButton = getByText(/close/i);
-//   fireEvent.click(closeButton);
-//   expect(toggleClosed).toHaveBeenCalledTimes(1);
-//   fireEvent.click(getByText(/close gate/i));
-//   const openState = queryByText(/open/i);
-//   expect(openState).toBeNull();
-// });
+test("buttons text changes to reflect the state the door will be in if clicked", () => {
+  const component = render(<Dashboard />);
+  let button = component.getByText("Close Gate");
+  fireEvent.click(button);
+  button = component.getByText("Open Gate");
+  expect(button);
+});
