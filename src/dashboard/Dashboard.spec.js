@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import Dashboard from "./Dashboard";
 
 test("Render Dashboard", () => {
@@ -17,7 +17,7 @@ test("Default Gate State", () => {
 // test("Can't open/close if locked", () => {
 //   const toggleLocked = jest.fn();
 //   const toggleClosed = jest.fn();
-//   const { getByText, queryByText, fireEvent } = render(<Dashboard />);
+//   const { getByText, queryByText } = render(<Dashboard />);
 
 //   const closeButton = getByText(/close/i);
 //   fireEvent.click(closeButton);
